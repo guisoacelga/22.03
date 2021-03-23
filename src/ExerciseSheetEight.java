@@ -1,6 +1,7 @@
 import java.util.Arrays;
 
-public class FindSmallestTwoDim {
+public class ExerciseSheetEight {
+
     public static void main(String[] args) {
         int[][] arr2D = {{1,9,0,1}, {8,5,1,6}, {4,1,6,7}, {1,1,2,3}};
         int[] indices = findSmallestNr2D(arr2D);
@@ -8,6 +9,12 @@ public class FindSmallestTwoDim {
         System.out.println("Los indices del nro menor son: " + Arrays.toString(indices));
         System.out.println("El nro menor es: " + arr2D[indices[0]][indices[1]]);
         System.out.println("La suma de la diagonal contraria es: " + sumaDiagonalContraria(arr2D));
+
+        float[][] arrFloat2D = {{1,9,0,1}, {8,5,1,6}, {4,1,6,7}, {1,1,2,3}};
+        System.out.println("Los promedios de cada línea son: " + Arrays.toString(averageValue(arrFloat2D)));
+
+
+
 
     }
 
@@ -47,5 +54,23 @@ public class FindSmallestTwoDim {
        }
 
         return suma;
+    }
+
+    public static double[] averageValue(float[][] arrFloat2D){
+        double[] arrayResult = new double[arrFloat2D.length];
+        double suma2 = 0D;
+        double averageLine = 0D;
+
+        for (int i = 0; i < arrFloat2D.length; i++) {
+
+            for (int j = 0; j < arrFloat2D[i].length; j++) {
+                suma2 = suma2 + arrFloat2D[i][j];
+            }
+
+            averageLine = suma2 / arrFloat2D[i].length;
+            arrayResult[i] = averageLine;
+        }
+        return arrayResult;
+
     }
 }
