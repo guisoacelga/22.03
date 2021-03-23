@@ -14,7 +14,6 @@ public class Matrix {
         int j=0;
         for (int i = 0; i < size; i++) {
             matrixId[i][i] = 1.0;
-
         }
 
         return matrixId;
@@ -24,8 +23,10 @@ public class Matrix {
 
 
         for (int i = 0; i < matrix.length; i++) {
-            System.out.println(" ");
-            for (int j = 0; j < matrix.length; j++) {
+            //con este sabemos cuántas filas!
+            System.out.println();
+            for (int j = 0; j < matrix[i].length; j++) {
+                //con este sabemos cuántas columnas!
                 System.out.print(matrix[i][j]+ "\t |\t");
             }
 
